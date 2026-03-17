@@ -89,9 +89,9 @@ sudo python3 hexguard.py --full
 
 ## Uso exclusivo en sistemas autorizados
 
-SSH Hardening: asegúrate de tener configurada una llave pública antes de ejecutar
+**SSH Hardening:** asegúrate de tener configurada una llave pública antes de ejecutar
 
-Hardening completo: ten acceso físico o consola de emergencia para revertir cambios si algo falla
+**Hardening completo:** ten acceso físico o consola de emergencia para revertir cambios si algo falla
 
 ## Restaurar configuraciones (ejemplo SSH)
 ```bash
@@ -100,7 +100,7 @@ sudo systemctl restart ssh
 ```
 ## Buenas prácticas
 
-Revisa los logs en /var/log/hexguard.log
+Revisa los logs en **/var/log/hexguard.log**
 
 Ejecuta módulos individuales antes de aplicar hardening completo
 
@@ -108,15 +108,15 @@ Combina HexGuardTool con otras auditorías de seguridad
 
 ## Autor y Licencia
 
-Autor: Lucas Román “LUCASFOKING”
-Licencia: MIT — Open Source
+Autor: **Lucas Román “LUCASFOKING”**
+Licencia: **MIT — Open Source**
 
 ## Futuras mejoras
 
-Interfaz gráfica (GUI)
+Interfaz gráfica **(GUI)**
 
-Reportes exportables
+Reportes **exportables**
 
-Integración con sistemas SIEM
+Integración con **sistemas SIEM**
 
-Soporte para más distros Linux
+Soporte para más distros **Linux**
