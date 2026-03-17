@@ -1,143 +1,106 @@
-🛡️ HexGuard
+🛡️ HexGuardTool
 
-“HexGuard automatiza la seguridad de Linux: detecta, corrige y blinda el sistema en minutos.”
+HexGuardTool es una herramienta modular de auditoría y hardening para sistemas Linux que permite automáticamente fortalecer la seguridad, detectar configuraciones inseguras y aplicar correcciones prácticas con un conjunto de 10 módulos especializados.
 
 📌 Descripción
 
-HexGuard es una herramienta modular de auditoría y hardening para sistemas Linux, diseñada para aplicar medidas de seguridad reales de forma automatizada.
+HexGuardTool automatiza tareas comunes de seguridad en servidores y máquinas con Linux (especialmente Debian/Ubuntu/Kali/Parrot). Integra múltiples controles de seguridad en un solo script Python fácil de usar, ideal tanto para administradores como para estudiantes o entornos de práctica.
 
-Permite analizar el estado del sistema, detectar configuraciones inseguras y aplicar correcciones mediante un conjunto de 10 módulos de seguridad, orientados a proteger accesos, servicios y archivos críticos.
+🚀 Características principales
 
-Está pensada para:
+HexGuardTool agrupa 10 módulos de seguridad independientes que pueden ejecutarse individualmente o en conjunto para aplicar configuraciones de hardening:
 
-Administradores de sistemas
+Módulo	Función
+MOD‑01 – Actualización del Sistema	Actualiza paquetes, aplica parches y elimina dependencias huérfanas.
+MOD‑02 – Firewall UFW	Configura firewall restrictivo (deny‑all entrante) con excepciones para SSH/HTTP/HTTPS.
+MOD‑03 – SSH Hardening	Asegura SSH deshabilitando login root y autenticación por contraseña.
+MOD‑04 – Fail2Ban	Instala y configura Fail2Ban para mitigar ataques de fuerza bruta.
+MOD‑05 – Escaneo de Rootkits	Ejecuta chkrootkit para detectar rootkits y backdoors conocidos.
+MOD‑06 – Auditoría de Usuarios	Lista cuentas, detecta UID 0 y muestra últimos logins.
+MOD‑07 – Servicios Inseguros	Deshabilita servicios que transmiten datos en texto plano.
+MOD‑08 – Permisos Críticos	Verifica y corrige permisos de archivos esenciales (/etc/passwd, shadow, root, sudoers).
+MOD‑09 – Análisis de Logs SSH	Analiza intentos fallidos y las IPs más activas en auth.log.
+MOD‑10 – Hardening Completo	Ejecuta todos los módulos de forma secuencial y ordenada.
+📦 Requisitos
 
-Estudiantes de ciberseguridad
+Antes de usar HexGuardTool:
 
-Laboratorios y entornos de práctica
+🐍 Python 3.8+
 
-⚙️ Características
+🛠️ Permisos de superusuario (root)
 
-🔄 Actualización automática del sistema
+💻 Sistema Linux compatible (Debian/Ubuntu/Kali/Parrot)
 
-🔥 Configuración de firewall (UFW)
+🚧 Instalación
 
-🔐 Hardening de SSH
+Clona el repositorio y prepara el script:
 
-🚫 Protección contra fuerza bruta (Fail2Ban)
+git clone https://github.com/LUCAS-ROMAN-VELASQUEZ/HexguardTool.git
+cd HexguardTool
+chmod +x hexguard.py
 
-🕵️ Detección de rootkits
+Verifica la versión:
 
-👥 Auditoría de usuarios
+sudo python3 hexguard.py --version
+⚙️ Uso
+🧩 Modo interactivo
 
-⚠️ Detección de servicios inseguros
+Ejecuta sin argumentos para ver un menú interactivo:
 
-🔒 Corrección de permisos críticos
+sudo python3 hexguard.py
+🎯 Ejecutar un módulo específico
+sudo python3 hexguard.py --update         # Solo actualización del sistema
+sudo python3 hexguard.py --firewall       # Solo firewall
+sudo python3 hexguard.py --ssh            # Solo hardening de SSH
+🛠 Hardening completo
+sudo python3 hexguard.py --full
+📌 Otros flags útiles
 
-📊 Análisis de logs SSH
+--no-banner: Ejecutar sin mostrar el banner.
 
-Ejecución completa automatizada
+--help: Mostrar ayuda completa.
 
-Módulos
-Módulo	Descripción
-MOD-01	Actualización del sistema
-MOD-02	Configuración de firewall
-MOD-03	Hardening de SSH
-MOD-04	Fail2Ban
-MOD-05	Escaneo de rootkits
-MOD-06	Auditoría de usuarios
-MOD-07	Servicios inseguros
-MOD-08	Permisos críticos
-MOD-09	Análisis de logs SSH
-MOD-10	Hardening completo
-Instalación
-git clone https://github.com/tuusuario/hexguard.git
-cd hexguard
-chmod +x hexguard.sh
-Uso
-
-Ejecutar la herramienta:
-
-sudo ./hexguard.sh
-
-Ejecutar un módulo específico:
-
-sudo ./hexguard.sh --mod 03
-
-Ejecutar hardening completo:
-
-sudo ./hexguard.sh --full
-Ejemplo de ejecución
-[+] Iniciando HexGuard...
-
-[MOD-01] Actualizando sistema...
-✔ Sistema actualizado correctamente
-
-[MOD-02] Configurando firewall...
-✔ UFW activo (SSH, HTTP, HTTPS permitidos)
-
-[MOD-03] Hardening SSH...
-✔ Acceso root deshabilitado
-✔ Autenticación por clave habilitada
-
-...
-
+📋 Ejemplo de ejecución
+[+] Iniciando HexGuard…
+[MOD‑01] Actualizando sistema… ✔ Sistema actualizado
+[MOD‑02] Configurando firewall… ✔ UFW configurado
+[MOD‑03] Hardening SSH… ✔ Acceso root deshabilitado
+…
 [✔] Sistema securizado correctamente
-Evidencias
+⚠️ Advertencias
 
-Incluye capturas o logs reales aquí, por ejemplo:
+🔒 Uso exclusivo en sistemas autorizados
+Modifica configuraciones críticas del sistema. Nunca lo ejecutes en sistemas ajenos sin permiso claro.
 
-Configuración de UFW activa
+🔑 SSH Hardening
+Antes de aplicar cambios de SSH, asegúrate de tener configurada una llave pública SSH para evitar quedarte sin acceso remoto.
 
-Bloqueo de IPs con Fail2Ban
+📍 Hardening completo
+Se recomienda tener acceso físico o consola de emergencia por si es necesario revertir cambios.
 
-Resultados de escaneo de rootkits
+🔄 Restaurar configuraciones
 
-Logs de intentos SSH
+Por ejemplo, para restaurar SSH en caso de error:
 
-Controles de seguridad implementados
+sudo cp /etc/ssh/sshd_config.bak /etc/ssh/sshd_config
+sudo systemctl restart ssh
+🧠 Buenas prácticas
 
-Gestión de actualizaciones y parches
+✔ Revisa los logs generados en /var/log/hexguard.log para auditoría.
+✔ Usa módulos individualmente antes de aplicar hardening completo.
+✔ Combina HexGuardTool con análisis de seguridad adicionales (análisis de puertos, revisión de políticas de contraseñas, etc.).
 
-Configuración de firewall restrictivo
+🧑‍💻 Autor y Licencia
 
-Protección del acceso remoto (SSH)
+Autor: Lucas Román “LUCASFOKING”
+📄 Licencia: MIT — Open Source
 
-Mitigación de ataques de fuerza bruta
-
-Detección de malware y rootkits
-
-Auditoría de cuentas y accesos
-
-Eliminación de servicios inseguros
-
-Protección de archivos críticos del sistema
-
-Monitorización de intentos de acceso
-
-Requisitos
-
-Sistema Linux (Ubuntu/Debian recomendado)
-
-Permisos de superusuario (root)
-
-Conexión a Internet
-
-Licencia
-
-Este proyecto está bajo la licencia MIT.
-Consulta el archivo LICENSE para más información.
-
-Autor
-
-LUCASFOKING
-
-Mejoras futuras
+📈 Futuras mejoras (Opcionales)
 
 Interfaz gráfica (GUI)
 
-Exportación de reportes
+Reportes exportables
 
-Integración con SIEM
+Integración con sistemas SIEM
 
-Soporte para más distribuciones Linux
+Soporte para más distros Linux
