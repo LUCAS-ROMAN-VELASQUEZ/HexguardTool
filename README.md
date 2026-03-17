@@ -62,7 +62,7 @@ Ejecutar un módulo específico
 ```bashsudo python3 hexguard.py --update         # Actualización del sistema
 sudo python3 hexguard.py --firewall       # Firewall
 sudo python3 hexguard.py --ssh            # SSH Hardening
-🛠 Hardening completo
+ Hardening completo
 sudo python3 hexguard.py --full
 ```
  Otros flags
