@@ -58,14 +58,17 @@ sudo python3 hexguard.py
 ```
 Aparece un menú para ejecutar cualquier módulo de forma interactiva.
 
-Ejecutar un módulo específico
-```bashsudo python3 hexguard.py --update         # Actualización del sistema
+### Ejecutar un módulo específico
+```bash
+sudo python3 hexguard.py --update         # Actualización del sistema
 sudo python3 hexguard.py --firewall       # Firewall
 sudo python3 hexguard.py --ssh            # SSH Hardening
- Hardening completo
+ ```
+### Hardening completo
+```bash
 sudo python3 hexguard.py --full
 ```
- Otros flags
+ ### Otros flags
 
 ```bash
 --no-banner → Ejecutar sin banner
@@ -73,7 +76,7 @@ sudo python3 hexguard.py --full
 --help → Mostrar ayuda completa
 ```
 
-Ejemplo de ejecución
+### Ejemplo de ejecución
 ```bash
 [+] Iniciando HexGuard…
 [MOD‑01] Actualizando sistema… ✔ Sistema actualizado
@@ -84,11 +87,11 @@ Ejemplo de ejecución
 ```
 ## Advertencias
 
-Uso exclusivo en sistemas autorizados
+## Uso exclusivo en sistemas autorizados
 
-## SSH Hardening: asegúrate de tener configurada una llave pública antes de ejecutar
+SSH Hardening: asegúrate de tener configurada una llave pública antes de ejecutar
 
-## Hardening completo: ten acceso físico o consola de emergencia para revertir cambios si algo falla
+Hardening completo: ten acceso físico o consola de emergencia para revertir cambios si algo falla
 
 ## Restaurar configuraciones (ejemplo SSH)
 ```bash
