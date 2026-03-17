@@ -82,20 +82,20 @@ Ejemplo de ejecución
 ...
 [✔] Sistema securizado correctamente
 ```
-Advertencias
+## Advertencias
 
 Uso exclusivo en sistemas autorizados
 
- SSH Hardening: asegúrate de tener configurada una llave pública antes de ejecutar
+# SSH Hardening: asegúrate de tener configurada una llave pública antes de ejecutar
 
-Hardening completo: ten acceso físico o consola de emergencia para revertir cambios si algo falla
+# Hardening completo: ten acceso físico o consola de emergencia para revertir cambios si algo falla
 
-Restaurar configuraciones (ejemplo SSH)
+## Restaurar configuraciones (ejemplo SSH)
 ```bash
 sudo cp /etc/ssh/sshd_config.bak /etc/ssh/sshd_config
 sudo systemctl restart ssh
 ```
-Buenas prácticas
+## Buenas prácticas
 
 Revisa los logs en /var/log/hexguard.log
 
@@ -103,12 +103,12 @@ Ejecuta módulos individuales antes de aplicar hardening completo
 
 Combina HexGuardTool con otras auditorías de seguridad
 
-Autor y Licencia
+## Autor y Licencia
 
 Autor: Lucas Román “LUCASFOKING”
 📄 Licencia: MIT — Open Source
 
-Futuras mejoras
+## Futuras mejoras
 
 Interfaz gráfica (GUI)
 
