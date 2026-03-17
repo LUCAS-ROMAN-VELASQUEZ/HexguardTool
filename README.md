@@ -86,9 +86,9 @@ Ejemplo de ejecución
 
 Uso exclusivo en sistemas autorizados
 
-# SSH Hardening: asegúrate de tener configurada una llave pública antes de ejecutar
+## SSH Hardening: asegúrate de tener configurada una llave pública antes de ejecutar
 
-# Hardening completo: ten acceso físico o consola de emergencia para revertir cambios si algo falla
+## Hardening completo: ten acceso físico o consola de emergencia para revertir cambios si algo falla
 
 ## Restaurar configuraciones (ejemplo SSH)
 ```bash
@@ -106,7 +106,7 @@ Combina HexGuardTool con otras auditorías de seguridad
 ## Autor y Licencia
 
 Autor: Lucas Román “LUCASFOKING”
-📄 Licencia: MIT — Open Source
+Licencia: MIT — Open Source
 
 ## Futuras mejoras
 
